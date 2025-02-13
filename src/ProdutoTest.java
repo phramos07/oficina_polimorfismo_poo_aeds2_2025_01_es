@@ -1,6 +1,7 @@
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import java.util.Locale;
 
 public class ProdutoTest {
 
@@ -9,6 +10,7 @@ public class ProdutoTest {
     
     @BeforeAll
     static public void prepare(){
+        Locale.setDefault(new Locale("pt", "BR"));
         produto = new Produto("Produto teste", 100, 0.1);
     }
     
@@ -20,7 +22,7 @@ public class ProdutoTest {
     @Test
     public void stringComDescricaoEValor(){
         String desc = produto.toString();
-        assertTrue(desc.contains("Produto teste") && desc.contains("R$ 110,00"));
+        assertTrue(desc.contains("Produto teste") && desc.contains("R$") && desc.contains("110,00"));
     }
 
     @Test

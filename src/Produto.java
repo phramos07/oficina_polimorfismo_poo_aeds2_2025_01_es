@@ -93,7 +93,6 @@ public class Produto {
     @Override
     public String toString(){
         NumberFormat moeda = NumberFormat.getCurrencyInstance();
-        
         return String.format("NOME: %s: %s", descricao, moeda.format(valorDeVenda()));
     }
 }
