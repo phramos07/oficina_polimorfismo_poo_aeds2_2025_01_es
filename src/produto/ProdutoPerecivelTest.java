@@ -127,7 +127,8 @@ public class ProdutoPerecivelTest {
         assertEquals(82.50, produtoValido.valorDeVenda(), epsilon);
     }
 
-    @Test void naoVendeProdutoForaDaDataDeValidade(){
+    @Test 
+    public void naoVendeProdutoForaDaDataDeValidade(){
         simulaPassagemDeTempo(diasProdutoVencimento + 1);
         assertThrows(IllegalStateException.class, () -> produtoValido.valorDeVenda());
     }
