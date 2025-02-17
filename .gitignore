@@ -33,3 +33,5 @@
 **/*.exe
 
 desktop.ini
+
+/bin
